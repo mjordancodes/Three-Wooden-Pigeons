@@ -19,11 +19,18 @@ export const pageQuery = graphql`
 `
 
 const IndexPage = ({data}) => {
-  const image = getImage(data.allContentfulPhotoGallery.nodes[0].thumbnail)
+  const images = [];
+
+  for ( let i = 0; i < data.allContentfulPhotoGallery.nodes.length; i++) {
+    images.push(getImage(data.allContentfulPhotoGallery.nodes[i].thumbnail))
+  }
+
+
   return (
     <main>
-      <p>hello world!</p>
-      <GatsbyImage image={image} alt="hello" />
+      {images.map((value, index) => {
+        return <GatsbyImage image={value} alt="Photo Gallery" />
+      })}
     </main>
   )
 }
