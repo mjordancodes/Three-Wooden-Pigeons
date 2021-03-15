@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-// import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import '../sass/gallery.scss'
 
 export const query = graphql`
@@ -20,10 +20,20 @@ export const query = graphql`
 `
 
 const GalleryTemplate = (props) => {
-  console.log(props)
+  const album = props.data.contentfulPhotoGallery
+
   return (
     <main>
-        <h1>Gallery: {props.data.contentfulPhotoGallery.galleryTitle}</h1>
+        <h1>{album.galleryTitle}</h1>
+        <div className="gallery">
+            {album.photos.map((value,index) => {
+                return (
+                    <div key={index}>
+                        <GatsbyImage image={getImage(value)} alt={value.description} />
+                    </div>
+                )
+            })}
+        </div>
     </main>
   )
 }

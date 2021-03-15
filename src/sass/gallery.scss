@@ -3,3 +3,10 @@
     grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
     grid-gap: 10px;
 }
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+    grid-gap: 10px;
+}
