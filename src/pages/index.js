@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import '../sass/gallery.scss'
 
@@ -8,6 +8,7 @@ export const pageQuery = graphql`
     allContentfulPhotoGallery(sort: {order: DESC, fields: dateTaken}) {
       nodes {
         galleryTitle
+        slug
         thumbnail {
           gatsbyImageData(placeholder: BLURRED)
           file {
@@ -26,15 +27,17 @@ const IndexPage = ({data}) => {
   return (
     <main>
 
-      <section id="gallery">
+      <section id="galleries">
         <h2>Photography Galleries by Location</h2>
-        <div className="gallery">
+        <div className="galleries">
 
           {albums.map((value, index) => {
             return (
               <div key={index}>
-                <GatsbyImage image={getImage(value.thumbnail)} alt="Photo Gallery" />
-                <p>{value.galleryTitle}</p>
+                <Link to={`/${value.slug}`}>
+                  <GatsbyImage image={getImage(value.thumbnail)} alt="Photo Gallery" />
+                  <p>{value.galleryTitle}</p>
+                </Link>
               </div>
             )
           })}
