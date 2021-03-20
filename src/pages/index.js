@@ -1,6 +1,8 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Container, Row, Col } from 'react-bootstrap';
+
 import '../sass/gallery.scss'
 
 export const pageQuery = graphql`
@@ -26,6 +28,12 @@ const IndexPage = ({data}) => {
 
   return (
     <main>
+
+    <Container>
+      <Row>
+        <Col>1 of 1</Col>
+      </Row>
+    </Container>
 
       <section id="galleries">
         <h2>Photography Galleries by Location</h2>
