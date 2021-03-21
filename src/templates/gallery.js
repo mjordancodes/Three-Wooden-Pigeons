@@ -22,7 +22,7 @@ export const query = graphql`
         }
     }
 `
-let clickedImage = 'hi';
+let clickedImage = '';
 
 function ImageModal(props) {
     return (
