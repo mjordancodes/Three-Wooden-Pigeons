@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation'
 
 import '../sass/gallery.scss'
 
+
 export const pageQuery = graphql`
   query {
     allContentfulPhotoGallery(sort: {order: DESC, fields: dateTaken}) {

@@ -4,6 +4,23 @@
     grid-gap: 10px;
 }
 
+.galleries > div {
+    border: 1px solid #666;
+    padding: 10px;
+    text-align: center;
+    transform: rotate(-2deg);
+    transition: 500ms;
+    font-family: 'Indie Flower';
+}
+
+.galleries >div:hover {
+    transform: rotate(0deg);
+}
+
+.galleries a {
+    color: black;
+}
+
 
 .gallery {
     column-count: 1;
