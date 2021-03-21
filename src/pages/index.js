@@ -15,7 +15,12 @@ export const pageQuery = graphql`
         galleryCategory
         slug
         thumbnail {
-          gatsbyImageData(placeholder: BLURRED)
+          gatsbyImageData(
+            placeholder: BLURRED
+            layout: CONSTRAINED
+            width: 400
+            height: 300
+            )
           file {
             url
           }
