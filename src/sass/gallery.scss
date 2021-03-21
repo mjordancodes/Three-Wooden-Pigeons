@@ -11,10 +11,12 @@
     transform: rotate(-2deg);
     transition: 500ms;
     font-family: 'Indie Flower';
+    background: white;
 }
 
-.galleries >div:hover {
-    transform: rotate(0deg);
+.galleries > div:hover {
+    transform: rotate(0deg) scale(1.1);
+    z-index: 99;
 }
 
 .galleries a {
